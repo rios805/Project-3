@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
 
             if (bulletPrefab != null)
             {
-                Instantiate(bulletPrefab, transform.position, Quaternion.identity); // No need to call Fire()
+                Instantiate(bulletPrefab, transform.position, Quaternion.identity); 
             }
         }
     }

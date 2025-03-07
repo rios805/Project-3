@@ -21,11 +21,11 @@ public class EnemyBullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Player>() != null) // If it hits the player
+        if (collision.gameObject.GetComponent<Player>() != null) 
         {
             Debug.Log("Player hit!");
-            Destroy(collision.gameObject); // Destroy player (add respawn later if needed)
-            Destroy(gameObject); // Destroy bullet
+            Destroy(collision.gameObject); 
+            Destroy(gameObject); 
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs; // Assign your enemy prefabs in Inspector
+    public GameObject[] enemyPrefabs; 
     public int rows = 3;
     public int columns = 6;
     public float moveSpeed = 1.0f;
