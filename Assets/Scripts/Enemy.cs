@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,31 +14,38 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ShootAtPlayer());
+         if (SceneManager.GetActiveScene().name != "Main Menu")
+        {
+            StartCoroutine(ShootAtPlayer());
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
-            Debug.Log("Enemy hit!");
+        if (collision.gameObject.CompareTag("PlayerBullet")) // Only destroy when hit by player's bullet
+        {
+            Debug.Log("Enemy hit by player bullet!");
             OnEnemyDied?.Invoke(enemyPoints);
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject); 
             Destroy(gameObject);
-        
+        }
     }
+
 
     IEnumerator ShootAtPlayer()
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            float randomFireRate = Random.Range(3f, 6f);
+            yield return new WaitForSeconds(randomFireRate);
 
-            if (bulletPrefab != null)
+            if (bulletPrefab != null && Object.FindFirstObjectByType<EnemyManager>() != null)
             {
-                Instantiate(bulletPrefab, transform.position, Quaternion.identity); 
+                Object.FindFirstObjectByType<EnemyManager>().TryFireBullet(transform, bulletPrefab);
             }
         }
     }
+
 
 }
 

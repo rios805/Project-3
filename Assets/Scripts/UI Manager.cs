@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+    public GameObject scoreAdvanceTable;
 
     private int currentScore = 0;
     private int highScore = 0;
@@ -16,6 +18,13 @@ public class UIManager : MonoBehaviour
     {
         highScore = PlayerPrefs.GetInt(HIGH_SCORE_KEY, 0); // Load high score
         UpdateUI();
+        if (SceneManager.GetActiveScene().name == "Main Game") 
+        {
+            if (scoreAdvanceTable != null)
+            {
+                scoreAdvanceTable.SetActive(false);
+            }
+        }
     }
 
     public void AddScore(int points)

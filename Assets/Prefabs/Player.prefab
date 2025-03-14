@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8017684208409169088}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,8 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdcdc8f506968548b9b30cef6fdf27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 2457785739244962049, guid: d4511b14daaa37c468a74ed386b2583f, type: 3}
+  bulletPrefab: {fileID: 2457785739244962049, guid: d4511b14daaa37c468a74ed386b2583f, type: 3}
   shottingOffset: {fileID: 8125335893176967482}
+  uiManager: {fileID: 0}
 --- !u!1 &6424274885353042238
 GameObject:
   m_ObjectHideFlags: 0

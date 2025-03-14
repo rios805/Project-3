@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1763615568}
   highScoreText: {fileID: 1678068774}
+  scoreAdvanceTable: {fileID: 1724964704}
 --- !u!4 &113304794
 Transform:
   m_ObjectHideFlags: 0
@@ -523,7 +524,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 223
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1015,7 +1016,7 @@ PrefabInstance:
     - target: {fileID: 4988884264498715822, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 2457785739244962049, guid: d4511b14daaa37c468a74ed386b2583f, type: 3}
+      objectReference: {fileID: 2457785739244962049, guid: 7b39a0355fc629d4badd4a2ce8b1be24, type: 3}
     - target: {fileID: 5948996942061377388, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5
@@ -1103,6 +1104,18 @@ PrefabInstance:
     - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6055069717150008154, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
@@ -1290,7 +1303,7 @@ PrefabInstance:
     - target: {fileID: 4988884264498715822, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 2457785739244962049, guid: d4511b14daaa37c468a74ed386b2583f, type: 3}
+      objectReference: {fileID: 2457785739244962049, guid: 7b39a0355fc629d4badd4a2ce8b1be24, type: 3}
     - target: {fileID: 5948996942061377388, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5
@@ -1378,6 +1391,18 @@ PrefabInstance:
     - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6055069717150008154, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
@@ -1703,6 +1728,7 @@ MonoBehaviour:
   moveSpeed: 1
   moveDownAmount: 0.5
   moveInterval: 1
+  gcd: 1.5
 --- !u!4 &1624118141
 Transform:
   m_ObjectHideFlags: 0
@@ -2456,6 +2482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 129043850064504577, guid: 46f7c04cfd4b73e49a865596061b9ab8, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3609444698749228658, guid: 46f7c04cfd4b73e49a865596061b9ab8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2478,11 +2508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3791936555625136708, guid: 46f7c04cfd4b73e49a865596061b9ab8, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.56
+      value: 1.5902563
       objectReference: {fileID: 0}
     - target: {fileID: 3791936555625136708, guid: 46f7c04cfd4b73e49a865596061b9ab8, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.56
+      value: 1.1400001
       objectReference: {fileID: 0}
     - target: {fileID: 3791936555625136708, guid: 46f7c04cfd4b73e49a865596061b9ab8, type: 3}
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
@@ -2572,7 +2602,7 @@ PrefabInstance:
     - target: {fileID: 4988884264498715822, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 2457785739244962049, guid: d4511b14daaa37c468a74ed386b2583f, type: 3}
+      objectReference: {fileID: 2457785739244962049, guid: 7b39a0355fc629d4badd4a2ce8b1be24, type: 3}
     - target: {fileID: 5948996942061377388, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5
@@ -2659,6 +2689,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
       propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483517710255911465, guid: c3b77266ea0668e4289e92aa866a25ed, type: 3}
+      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents:
